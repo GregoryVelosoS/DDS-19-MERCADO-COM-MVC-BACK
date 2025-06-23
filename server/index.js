@@ -16,14 +16,14 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Servir imagens
-app.use("/imagens", express.static("public/imagens"));
 // Rotas
 app.use("/", usuarioRoute);
 app.use("/", produtoRoute);
 app.use("/", categoriaRoute);
 
-// Teste
+//Rota/middleware para pasta de imagens
+app.use("/imagens", express.static("public/imagens"))
+
 app.get("/", (req, res) => {
   res.status(200).send("");
 });

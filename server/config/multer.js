@@ -1,15 +1,11 @@
-import multer from "multer";
-import path from "path";
+import multer from "multer"
+import path from "path"
 
-// Configuração de armazenamento
 const storage = multer.diskStorage({
-  // Define onde e como os arquivos serão armazenados
   destination: 'public/imagens',
-  filename: (req, file, callback) => {
-    // Cria um nome único para o arquivo
-    callback(null, Date.now() + "-" + path.basename(file.originalname)); // Nome do arquivo no servidor
-  },
-});
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + "-" + path.basename(file.originalname))
+  }
+})
 
-// Instância do multer
-export const upload = multer({ storage: storage });
+export const upload = multer({ storage: storage })

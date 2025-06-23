@@ -75,3 +75,5 @@ export const excluirProduto = (req, res) => {
     }
   });
 };
+
+

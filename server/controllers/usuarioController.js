@@ -1,11 +1,19 @@
 import {
+  buscarUsuarios,
   inserirUsuario,
   buscarUsuarios,
-  buscarUsuarioPorId,
   atualizarUsuario,
-  deletarUsuario
-} from '../models/usuarioModel.js';
+} from "../models/usuarioModel.js";
 
+export const listarUsuarios = (req, res) => {
+  buscarUsuarios((erro, resultado) => {
+    if (erro) {
+      res.status(500).json({ erro: erro.sqlMessage });
+    } else {
+      res.status(200).json(resultado);
+    }
+  });
+};
 export const criarUsuario = (req, res) => {
   const usuario = {
     nome: req.body.nome,
@@ -17,28 +25,18 @@ export const criarUsuario = (req, res) => {
 
   inserirUsuario(usuario, (erro) => {
     if (erro) {
-      res.status(500).json({ erro: erro.sqlMessage });
+      res.status(500).json(erro.sqlMessage);
     } else {
-      res.status(201).json({ mensagem: "Usuário cadastrado com sucesso" });
-    }
-  });
-};
-
-export const listarUsuarios = (req, res) => {
-  buscarUsuarios((erro, resultado) => {
-    if (erro) {
-      res.status(500).json({ erro: erro.sqlMessage });
-    } else {
-      res.status(200).json(resultado);
+      res.status(200).json("Usuário Cadastrado");
     }
   });
 };
 
 export const listarUsuarioPorId = (req, res) => {
-  const { id } = req.params;
-  buscarUsuarioPorId(id, (erro, resultado) => {
+  const { id } = req.params.id;
+  buscarUsuarios(id, (erro, resultdo) => {
     if (erro) {
-      res.status(500).json({ erro: erro.sqlMessage });
+      res.status(500).json(erro.sqlMessage);
     } else {
       res.status(200).json(resultado);
     }
@@ -46,7 +44,8 @@ export const listarUsuarioPorId = (req, res) => {
 };
 
 export const editarUsuario = (req, res) => {
-  const { id } = req.params;
+  const { id } = req.params.id;
+
   const usuario = {
     nome: req.body.nome,
     email: req.body.email,
@@ -57,20 +56,9 @@ export const editarUsuario = (req, res) => {
 
   atualizarUsuario(id, usuario, (erro) => {
     if (erro) {
-      res.status(500).json({ erro: erro.sqlMessage });
+      res.status(500).json(erro.sqlMessage);
     } else {
-      res.status(200).json({ mensagem: "Usuário atualizado com sucesso" });
-    }
-  });
-};
-
-export const excluirUsuario = (req, res) => {
-  const { id } = req.params;
-  deletarUsuario(id, (erro) => {
-    if (erro) {
-      res.status(500).json({ erro: erro.sqlMessage });
-    } else {
-      res.status(200).json({ mensagem: "Usuário excluído com sucesso" });
+      res.status(200).json("Usuário Editado");
     }
   });
 };
