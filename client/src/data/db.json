@@ -1,0 +1,86 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "nome": "Gregory",
+      "email": "gregory@gmail.com",
+      "senha": "5"
+    },
+    {
+      "id": "2",
+      "nome": "Cristiano",
+      "email": "cristiano@gmail.com",
+      "senha": "7"
+    },
+    {
+      "id": "4",
+      "nome": "Goku",
+      "email": "goku@gmail.com",
+      "senha": "gg123"
+    }
+  ],
+  "produtos": [
+    {
+      "nome": "Biozinho 1d",
+      "descricao": "Biozinho 16",
+      "categoria": "Saúde e Beleza",
+      "preco": "1.7",
+      "imagemUrl": "https://embratur.com.br/wp-content/uploads/2022/07/Embratur-Brasil-ultrapassa-marca-de-1-milhao-de-turistas-estrangeiros-recebidos-pela-primeira-vez-desde-2020-1.png",
+      "id": "63a9"
+    },
+    {
+      "nome": "Bolo no pote",
+      "descricao": "é um bolo, dentro de um pote",
+      "categoria": "Alimentos e Bebidas",
+      "preco": "15",
+      "imagemUrl": "https://guiadacozinha.com.br/wp-content/uploads/2019/10/bolo-no-pote-floresta-negra.jpg",
+      "id": "8933"
+    },
+    {
+      "id": "b1c0",
+      "nome": "defesa civil",
+      "descricao": "Garrafa de metal grande",
+      "categoria": "Saúde e Beleza",
+      "preco": "7890",
+      "imagemUrl": "https://st.depositphotos.com/2063219/2316/i/450/depositphotos_23164256-stock-photo-burning-objects-and-objects-on.jpg"
+    },
+    {
+      "id": "7190",
+      "nome": "Biozinho 16",
+      "descricao": "celular marca sansung",
+      "categoria": "Moda e Vestuário",
+      "preco": "2.2",
+      "imagemUrl": "https://static.vecteezy.com/ti/fotos-gratis/t2/23701963-selvagem-leopardo-animal-ilustracao-ai-generativo-gratis-foto.jpg"
+    }
+  ],
+  "categorias": [
+    {
+      "id": "1",
+      "nome": "Eletrônicos"
+    },
+    {
+      "id": "2",
+      "nome": "Moda e Vestuário"
+    },
+    {
+      "id": "3",
+      "nome": "Alimentos e Bebidas"
+    },
+    {
+      "id": "4",
+      "nome": "Saúde e Beleza"
+    },
+    {
+      "id": "5",
+      "nome": "Esportes e lazer"
+    },
+    {
+      "id": "6",
+      "nome": "Brinquedos e jogos"
+    },
+    {
+      "id": "7",
+      "nome": "Livros e papelaria"
+    }
+  ]
+}
