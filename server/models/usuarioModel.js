@@ -21,6 +21,7 @@ export const inserirUsuario = (usuario, callback) => {
 };
 
 export const buscarUsuarioPorId = (id, callback) => {
+  console.log(id)
   const sql = `SELECT * FROM usuarios WHERE id_usu = ?`;
   conn.query(sql, [id], callback)
 };
