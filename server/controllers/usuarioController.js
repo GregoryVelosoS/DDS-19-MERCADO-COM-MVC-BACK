@@ -1,7 +1,7 @@
 import {
   buscarUsuarios,
   inserirUsuario,
-  buscarUsuarios,
+  buscarUsuarioPorId,
   atualizarUsuario,
 } from "../models/usuarioModel.js";
 
@@ -34,7 +34,7 @@ export const criarUsuario = (req, res) => {
 
 export const listarUsuarioPorId = (req, res) => {
   const { id } = req.params.id;
-  buscarUsuarios(id, (erro, resultdo) => {
+  buscarUsuarioPorId(id, (erro, resultdo) => {
     if (erro) {
       res.status(500).json(erro.sqlMessage);
     } else {
