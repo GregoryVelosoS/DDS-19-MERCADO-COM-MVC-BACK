@@ -66,7 +66,8 @@ const FormularioUsuario = (props) => {
       async function fetchUsuario() {
         try {
           const usuario = await buscarUsuarioPorId(id);
-
+          console.log(usuario);
+          
           if (usuario && !carregado) {
             reset({
               nome: usuario[0].nome_usu,
@@ -105,7 +106,7 @@ const FormularioUsuario = (props) => {
     formData.append("tipo", data.tipo);
 
     if (data.imagem && data.imagem[0]) {
-      formData.append("imagem".data.imagem[0]);
+      formData.append("imagem", data.imagem[0]);
     }
 
     if (props.page === "cadastro") {

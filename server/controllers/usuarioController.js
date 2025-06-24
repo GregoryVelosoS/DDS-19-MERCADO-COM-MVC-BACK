@@ -33,8 +33,9 @@ export const criarUsuario = (req, res) => {
 };
 
 export const listarUsuarioPorId = (req, res) => {
-  const { id } = req.params.id;
-  buscarUsuarioPorId(id, (erro, resultdo) => {
+  const { id } = req.params;
+  console.log("id:", id)
+  buscarUsuarioPorId(id, (erro, resultado) => {
     if (erro) {
       res.status(500).json(erro.sqlMessage);
     } else {
@@ -44,7 +45,7 @@ export const listarUsuarioPorId = (req, res) => {
 };
 
 export const editarUsuario = (req, res) => {
-  const { id } = req.params.id;
+  const { id } = req.params;
 
   const usuario = {
     nome: req.body.nome,
